@@ -1,5 +1,5 @@
 # ImageOptimOnUpload
-ImageOptimOnUpload extra for MODX. This extra uses the the [ImageOptim API](https://imageoptim.com/api) to optimize and/or resize, crop images on Upload to the File-Manager.
+ImageOptimOnUpload extra for MODX. This extra uses the [ImageOptim API](https://imageoptim.com/api) to optimize and/or resize, crop images on Upload to the File-Manager.
 
 
 # Usage
