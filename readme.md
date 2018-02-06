@@ -1,10 +1,4 @@
-imageoptimonupload Extra for MODX Revolution
-=======================================
-
-
-**Author:** Quadro - Jan Dähne <https://www.quadro-system.de> [Quadro](https://www.quadro-system.de)
-
-#ImageOptimOnUpload
+# ImageOptimOnUpload
 ImageOptimOnUpload extra for MODX. This extra uses the the [ImageOptim API](https://imageoptim.com/api) to optimize and/or resize, crop images on Upload to the File-Manager.
 
 
