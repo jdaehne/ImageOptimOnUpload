@@ -8,7 +8,7 @@ By default the extra just optimizes the images. You can set options to resize, c
 | setting | default | description |
 | --- | --- | --- |
 | imageoptimonupload.filetypes | jpeg,png,gif,bmp | Comma separatet list of filetypes to process. |
-| imageoptimonupload.options |  | Comma separatet list of ImageOptim Options. Ex. 3000 or 100x100,crop. See [Documentation](https://imageoptim.com/api/post) |
+| imageoptimonupload.options |  | Comma separatet list of ImageOptim Options. Ex. 3000 or 100x100,crop. See [Documentation](https://imageoptim.com/api/post#options) |
 | imageoptimonupload.username |  | To use this extra, you need to get a (currently free) api username from [https://imageoptim.com/api/username](https://imageoptim.com/api/username) |
 
 
