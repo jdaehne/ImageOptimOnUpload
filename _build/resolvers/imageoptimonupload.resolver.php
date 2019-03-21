@@ -31,20 +31,23 @@ if ($object->xpdo) {
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         case xPDOTransport::ACTION_INSTALL:
         case xPDOTransport::ACTION_UPGRADE:
-            $usernameInstall = $modx->getOption('username', $options, '');
-            $username = $modx->getOption('imageoptimonupload.username', $options, '');
-            
-            if (!empty($usernameInstall)) {
-                
-                // set username to system settings
-                $setting = $modx->getObject('modSystemSetting', 'imageoptimonupload.username');
-                $setting->set('value', $usernameInstall);
-                $setting->save();
-                
-                // clear system settings cache
-                $modx->cacheManager->refresh(array('system_settings' => array()));
+
+            $settings = array(
+                'username',
+            );
+
+            foreach ($settings as $key) {
+                if (isset($options[$key])) {
+                    $setting = $object->xpdo->getObject('modSystemSetting',array('key' => 'imageoptimonupload.'.$key));
+                    if ($setting != null) {
+                        $setting->set('value',$options[$key]);
+                        $setting->save();
+                    } else {
+                        $object->xpdo->log(xPDO::LOG_LEVEL_ERROR,'[ImageOptimOnUpload] imageoptimonupload.'.$key.' setting could not be found, so the setting could not be changed.');
+                    }
+                }
             }
-            
+
             break;
 
         case xPDOTransport::ACTION_UNINSTALL:

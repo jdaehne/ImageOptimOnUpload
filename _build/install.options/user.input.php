@@ -55,9 +55,16 @@
  *
  * */
 
+ $setting = $modx->getObject('modSystemSetting',array('key' => 'imageoptimonupload.username'));
+ if ($setting != null) {
+     $values['username'] = $setting->get('value');
+ }
+ unset($setting);
+
+
 $output = '<style>.field_desc { color: #A0A0A0; font-size: 11px; font-style: italic; }</style>
 <label for="username">ImageOptim API Username:</label>
-<input type="text" name="username" id="username" value="" align="left" size="40" maxlength="60" />
+<input type="text" name="username" id="username" value="'.$values['username'].'" align="left" size="40" maxlength="60" />
 <div class="field_desc">Setup Username: <a href="https://imageoptim.com/api/username" target="_blank">https://imageoptim.com/api/username</a></div>';
 
 
