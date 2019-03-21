@@ -16,7 +16,7 @@ $components = array(
     'packageName' => 'imageoptimonupload',  /* No spaces, no dashes */
     'packageNameLower' => $packageNameLower,
     'packageDescription' => 'imageoptimonupload project for MyComponent extra',
-    'version' => '1.0.0',
+    'version' => '1.0.2',
     'release' => 'beta1',
     'author' => 'Quadro - Jan Dähne',
     'email' => '<https://www.quadro-system.de>',
@@ -160,7 +160,7 @@ $components = array(
     'allStatic' => false,
 
 
-  
+
     /* ********************************************* */
     /* Define optional directories to create under assets.
      * Add your own as needed.
@@ -214,8 +214,8 @@ $components = array(
     'readme.md' => true,
     /* assume every package has a core directory */
     'hasCore' => false,
-    
-    
+
+
     /* ********************************************* */
     /* (optional) Array of extra script resolver(s) to be run
      * during install. Note that resolvers to connect plugins to events,
@@ -250,7 +250,7 @@ $components = array(
     ),
 
 
- 
+
 
     /* ************************************
      *  These values are for CMPs.
