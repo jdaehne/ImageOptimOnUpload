@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'imageoptimonupload',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'ac75d58e232afc374a2555677d114c2b',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'f68b252bd9fbcb60887dd14af022de11',
+  'native_key' => 'imageoptimonupload.filetypes',
+  'object' => '{"key":"imageoptimonupload.filetypes","value":"jpeg,png,gif,bmp","xtype":"textfield","namespace":"imageoptimonupload","area":"system","editedon":null}',
+);

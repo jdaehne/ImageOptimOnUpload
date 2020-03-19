@@ -1,0 +1,46 @@
+{
+	"name": "ImageOptimOnUpload",
+	"lowCaseName": "imageoptimonupload",
+	"description": "Image optimization on upload",
+	"author": "Jan Dähne",
+	"version": "1.0.3-pl",
+	"package": {
+		"elements": {
+	        "plugins": [{
+	            "name": "imageOptimOnUpload",
+	            "file": "imageoptimonupload.plugin.php",
+	            "events": ["OnFileManagerUpload"]
+	        }]
+	    },
+	    "systemSettings": [
+	    	{
+				"key": "filetypes",
+				"area": "system",
+				"value": "jpeg,png,gif,bmp"
+			},
+			{
+				"key": "options",
+				"area": "system",
+				"value": ""
+			},
+			{
+				"key": "username",
+				"area": "system",
+				"value": ""
+			}
+		]
+	},
+	"build": {
+		"readme": "docs/readme.md",
+		"license": "docs/license.md",
+		"changelog": "docs/changelog.md",
+		"setupOptions": {
+	  		"source": "setup.options.php"
+		},
+		"resolver": {
+			"after": [
+				"resolve.setupoptions.php"
+			]
+		}
+	}
+}
