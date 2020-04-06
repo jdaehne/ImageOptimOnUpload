@@ -1,5 +1,10 @@
 Changelog for imageoptimonupload
 
+imageoptimonupload 1.0.4
+---------------------------------
++ Fix upload to non default media-sources
+
+
 imageoptimonupload 1.0.3
 ---------------------------------
 + Add modmore extras support (Redactor, moreGallery, ContentBloks ...)
