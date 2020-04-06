@@ -17,7 +17,7 @@ class ImageOptimOnUpload {
         // config
         $this->username = $this->modx->getOption('imageoptimonupload.username');
         $this->options = $this->modx->getOption('imageoptimonupload.options');
-        $this->iletypes = $this->modx->getOption('imageoptimonupload.filetypes');
+        $this->filetypes = $this->modx->getOption('imageoptimonupload.filetypes');
     }
 
 
