@@ -1,5 +1,9 @@
 Changelog for imageoptimonupload
 
+imageoptimonupload 1.0.5 (unplublished)
+---------------------------------
++ Add options as optional input to function
+
 imageoptimonupload 1.0.4
 ---------------------------------
 + Fix upload to non default media-sources

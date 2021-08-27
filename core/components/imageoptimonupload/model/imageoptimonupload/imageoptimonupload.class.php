@@ -22,8 +22,11 @@ class ImageOptimOnUpload {
 
 
     // upload and otimize image
-    public function optim($sourceImageUrl, $sourceImagePath, $targetImagePath)
+    public function optim($sourceImageUrl, $sourceImagePath, $targetImagePath, $options = NULL)
     {
+        // if options is empty use system settings
+        $options = (empty($options)) ? $this->options : $options;
+
         // Settings needed to switch to the POST method
         $postContext = stream_context_create([
             'http' => [
@@ -33,7 +36,7 @@ class ImageOptimOnUpload {
 
         // get image data from the API
         $imageData = @file_get_contents(
-            'https://im2.io/' . $this->username . '/' . $this->options . '/' . $sourceImageUrl,
+            'https://im2.io/' . $this->username . '/' . $options . '/' . $sourceImageUrl,
             false, $postContext);
 
         if ($http_response_header[0] == 'HTTP/1.1 200 OK') {
@@ -45,7 +48,7 @@ class ImageOptimOnUpload {
         }else {
             // on local or protected enviroment use upload instead of post
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://im2.io/' . $this->username . '/' . $this->options);
+            curl_setopt($ch, CURLOPT_URL, 'https://im2.io/' . $this->username . '/' . $options);
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

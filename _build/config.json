@@ -3,7 +3,7 @@
 	"lowCaseName": "imageoptimonupload",
 	"description": "Image optimization on upload",
 	"author": "Jan Dähne",
-	"version": "1.0.4-pl",
+	"version": "1.0.5-pl",
 	"package": {
 		"elements": {
 	        "plugins": [{
