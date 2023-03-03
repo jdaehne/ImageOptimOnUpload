@@ -9,7 +9,11 @@
 	        "plugins": [{
 	            "name": "imageOptimOnUpload",
 	            "file": "imageoptimonupload.plugin.php",
-	            "events": ["OnFileManagerUpload"]
+	            "events": ["OnFileManagerUpload","OnFileManagerBeforeUpload"]
+	        }],
+			"snippets": [{
+	            "name": "imageOptimOnUploadScan",
+	            "file": "imageoptimonuploadscan.snippet.php"
 	        }]
 	    },
 	    "systemSettings": [
@@ -27,6 +31,12 @@
 				"key": "username",
 				"area": "system",
 				"value": ""
+			},
+			{
+				"key": "checkfile",
+				"area": "system",
+				"value": "1",
+				"type": "combo-boolean"
 			}
 		]
 	},

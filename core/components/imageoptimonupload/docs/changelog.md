@@ -1,8 +1,11 @@
 Changelog for imageoptimonupload
 
-imageoptimonupload 1.0.5 (unplublished)
+imageoptimonupload 1.0.5
 ---------------------------------
 + Add options as optional input to function
++ Add image and filesize check
++ Add Scan-Snippet to search for large unprocessed images
+
 
 imageoptimonupload 1.0.4
 ---------------------------------

@@ -102,6 +102,68 @@ class ImageOptimOnUpload {
         return true;
     }
 
+    public function getDirContents($dir, &$results = array())
+    {
+        $files = scandir($dir);
 
+        foreach ($files as $key => $value) {
+            $path = realpath($dir . DIRECTORY_SEPARATOR . $value);
+            if (!is_dir($path)) {
+                $results[] = $path;
+            } else if ($value != "." && $value != "..") {
+                $this->getDirContents($path, $results);
+            }
+        }
+
+        return $results;
+    }
+
+    public function scanDir($dir, $filter = array())
+    {
+        $files = $this->getDirContents($dir);
+
+        foreach ($files as $key => $file) {
+
+            // get file infos
+            list($width, $height, $type, $attr) = getimagesize($file);
+
+            // get file mime type
+            $type = mime_content_type($file);
+
+            // check if file is in filetype
+            if (!$this->checkFileType($type)) {
+                unset($files[$key]);
+                continue;
+            }
+
+            // get filesize
+            $filesize = filesize($file);
+
+            // add informations
+            $files[$key] = array(
+                'name' => basename($file),
+                'path' => $file,
+                'width' => $width,
+                'height' => $height,
+                'type' => $type,
+                'size' => $filesize,
+                'size_formatted' => $this->formatBytes($filesize),
+            );
+
+            // filter
+            if (!empty($filter)) {
+                if ($width >= $filter->width xor $height >= $filter->height xor $filesize >= $filter->size) continue;
+                unset($files[$key]);
+            }
+        }
+
+        return $files;
+    }
+
+    public function formatBytes($bytes, $precision = 2) {
+        $i = floor(log($bytes) / log(1024));
+        $sizes = array('B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+        return sprintf('%.02F', round($bytes / pow(1024, $i),1)) * 1 . ' ' . @$sizes[$i];
+    }
 
 }
