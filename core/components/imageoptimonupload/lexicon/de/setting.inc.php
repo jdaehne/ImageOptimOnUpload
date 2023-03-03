@@ -11,3 +11,5 @@ $_lang['setting_imageoptimonupload.options'] = 'ImageOptim Optionen';
 $_lang['setting_imageoptimonupload.options_desc'] = 'Kommaseparierte Liste von Optionen. Biespiel: 3000 or 100x100,crop. Zur Dokumentation: https://imageoptim.com/api/post';
 $_lang['setting_imageoptimonupload.username'] = 'ImageOptim Benutzername';
 $_lang['setting_imageoptimonupload.username_desc'] = 'ImageOptim API Benutzername: https://imageoptim.com/api/post';
+$_lang['setting_imageoptimonupload.checkfile'] = 'Bild- und Dateigröße prüfen';
+$_lang['setting_imageoptimonupload.username_desc'] = 'Maximale Bildgröße für imageOptim ist 10000x10000 Pixel (100 Megapixel). Maximale Dategröße ist 50 MB.';

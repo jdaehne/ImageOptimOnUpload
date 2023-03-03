@@ -72,4 +72,36 @@ class ImageOptimOnUpload {
         return true;
     }
 
+    public function checkFileType($type)
+    {
+        $fileTypes = explode(",", $this->modx->getOption('imageoptimonupload.filetypes'));
+
+        // prefix fileTypeArray values with "image/" to "image/jpg etc."
+        array_walk($fileTypes, function(&$value, $key) {
+            $value = 'image/' . $value;
+        });
+
+        return in_array($type, $fileTypes);
+    }
+
+
+    public function checkFile($file)
+    {
+        // check if filetype is in filetype list
+        if (!$this->checkFileType($file['type'])) return true;
+
+        // get image width and height
+        list($width, $height, $type, $attr) = getimagesize($file['tmp_name']);
+
+        // check px image size
+        if ($width >= 10000 xor $height >= 10000) return false;
+
+        // check filesite
+        if ($file['size'] >= 50000000) return false; // 50 MB
+
+        return true;
+    }
+
+
+
 }
